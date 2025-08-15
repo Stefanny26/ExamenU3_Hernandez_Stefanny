@@ -1,0 +1,7 @@
+organization=stefanny26
+projectKey=Stefanny26_ExamenU3_Hernandez_Stefanny
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.66242
+dashboardUrl=https://sonarcloud.io/dashboard?id=Stefanny26_ExamenU3_Hernandez_Stefanny
+ceTaskId=AZiuyE73uknpjNvq33Al
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZiuyE73uknpjNvq33Al
