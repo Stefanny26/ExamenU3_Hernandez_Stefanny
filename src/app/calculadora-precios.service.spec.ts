@@ -25,6 +25,7 @@ describe('CalculadoraPreciosService', () => {
     expect(resultado).toBe(resultadoEsperado);
   });
 
+  
   // Prueba 2 (2 Puntos): Caso límite - descuento 0%
   it('debería retornar el precio base cuando el descuento es 0%', () => {
     const precioBase = 200;
