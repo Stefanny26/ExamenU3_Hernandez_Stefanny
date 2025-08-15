@@ -14,16 +14,16 @@ export class CalculadoraPreciosService {
    * @returns El precio final después del descuento, o null si el precio base es negativo
    */
   aplicarDescuento(precioBase: number, porcentajeDescuento: number): number | null {
-    // BUG INTENCIONAL: Variable no utilizada para que SonarQube lo detecte
-    var variableNoUtilizada = "esto es un code smell";
+    // CODE SMELL: Variable declarada pero no utilizada
+    var variableNoUtilizada = "esto generará un code smell";
     
     // Validación: precio base no puede ser negativo
     if (precioBase < 0) {
       return null;
     }
 
-    // BUG INTENCIONAL: Comparación con == en lugar de ===
-    if (porcentajeDescuento == "100") {
+    // BUG: Comparación usando == en lugar de === (potencial bug de tipo)
+    if (porcentajeDescuento == 100) {
       return 0;
     }
 
@@ -34,8 +34,9 @@ export class CalculadoraPreciosService {
     return precioFinal;
   }
 
-  // CODE SMELL INTENCIONAL: Método sin usar
-  metodoNoUtilizado() {
-    console.log("Este método no se usa");
+  // CODE SMELL: Método no utilizado
+  metodoSinUsar() {
+    console.log("Este método no se utiliza en ningún lugar");
+    return "método innecesario";
   }
 }
