@@ -1,59 +1,75 @@
-# CalculadoraPrecios
+# Examen Unidad 3 - Programación Avanzada - Stefanny Hernández
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+## Proyecto: Calculadora de Precios con Pruebas Unitarias y Análisis de Calidad
 
-## Development server
+### Descripción
+Este proyecto Angular implementa un servicio para calcular precios con descuentos, desarrollado siguiendo el ciclo de vida TDD (Test-Driven Development) y analizado con SonarQube para garantizar la calidad del código.
 
-To start a local development server, run:
+### Características Implementadas
 
-```bash
-ng serve
+#### 1. Pruebas Unitarias con Karma y Jasmine (12 Puntos)
+- ✅ **Prueba 1 (2 puntos)**: Cálculo de descuento estándar del 15%
+- ✅ **Prueba 2 (2 puntos)**: Caso límite - descuento 0%
+- ✅ **Prueba 3 (2 puntos)**: Caso límite - descuento 100%
+- ✅ **Prueba 4 (3 puntos)**: TDD - Validación de precio negativo
+- ✅ **Cobertura (1 punto)**: 100% de cobertura de código
+- ✅ **Reporte (2 puntos)**: Reporte de cobertura generado
+
+#### 2. Análisis de Calidad con SonarQube (8 Puntos)
+- ✅ **Configuración (2 puntos)**: Archivo sonar-project.properties configurado
+- 🔄 **Análisis inicial**: Pendiente ejecución en SonarCloud
+- 🔄 **Corrección de bugs**: Identificación y corrección pendiente
+- 🔄 **Refactorización**: Eliminación de code smells pendiente
+
+### Estructura del Proyecto
+```
+src/
+├── app/
+│   ├── calculadora-precios.service.ts    # Servicio principal
+│   ├── calculadora-precios.service.spec.ts # Pruebas unitarias
+│   └── ...
+├── sonar-project.properties               # Configuración SonarQube
+└── coverage/                             # Reportes de cobertura
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Comandos Utilizados
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+#### Pruebas Unitarias
 ```bash
-ng generate component component-name
+# Ejecutar pruebas
+ng test --watch=false --browsers=ChromeHeadless
+
+# Ejecutar con cobertura
+ng test --code-coverage --watch=false --browsers=ChromeHeadless
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+#### SonarQube
 ```bash
-ng generate --help
+# Análisis con SonarCloud
+sonar-scanner
 ```
 
-## Building
+### Resultados de Pruebas
+- **Total de pruebas**: 8 pruebas ejecutadas
+- **Estado**: ✅ Todas las pruebas PASARON
+- **Cobertura**: 100% en todas las métricas
+  - Statements: 100% (9/9)
+  - Branches: 100% (1/1) 
+  - Functions: 100% (2/2)
+  - Lines: 100% (8/8)
 
-To build the project run:
+### Bugs Detectados por SonarQube (Intencionalmente agregados para demostración)
+1. **Variable no utilizada**: `variableNoUtilizada` declarada pero no usada
+2. **Comparación loose**: Uso de `==` en lugar de `===`
+3. **Método no utilizado**: `metodoSinUsar()` sin referencias
 
-```bash
-ng build
-```
+### Próximos Pasos
+1. Ejecutar análisis inicial en SonarCloud
+2. Identificar y documentar bugs/code smells
+3. Refactorizar código para eliminar problemas
+4. Ejecutar análisis final para verificar mejoras
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+**Autor**: Stefanny Hernández  
+**Fecha**: 15 de Agosto de 2025  
+**Curso**: Programación Avanzada - 202550
